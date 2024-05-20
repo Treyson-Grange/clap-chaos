@@ -23,6 +23,11 @@
     text-decoration: underline;
 }
 
+.nav footer {
+    height: fit-content;
+    text-align: center;
+}
+
 
 
 .description {

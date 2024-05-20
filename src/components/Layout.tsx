@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
-
+import Footer from '@/components/Footer';
 const inter = Inter({ subsets: ['latin'] });
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -40,6 +40,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <main className={styles.main}>
                 {children}
             </main>
+            <Footer />
         </div>
     );
 };
