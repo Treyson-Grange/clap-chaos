@@ -10,17 +10,17 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
 
     useEffect(() => {
-        const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        setIsDarkMode(darkModeMediaQuery.matches);
+        const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        setIsDarkMode(darkQuery.matches);
 
         const handleDarkModeChange = (event: MediaQueryListEvent) => {
             setIsDarkMode(event.matches);
         };
 
-        darkModeMediaQuery.addListener(handleDarkModeChange);
+        darkQuery.addListener(handleDarkModeChange);
 
         return () => {
-            darkModeMediaQuery.removeListener(handleDarkModeChange);
+            darkQuery.removeListener(handleDarkModeChange);
         };
     }, []);
 
