@@ -1,13 +1,8 @@
 import React from "react";
-import { useState, useEffect } from 'react'
 import { Col, Row, Container, Button } from 'react-bootstrap';
 import CardComp from '@/components/Card';
-const AboutInfo: React.FC = () => {
-    const [isClient, setIsClient] = useState(false)
 
-    useEffect(() => {
-        setIsClient(true)
-    }, [])
+const AboutInfo: React.FC = () => {
     return (
         <Container>
             <Row>
@@ -49,7 +44,7 @@ const AboutInfo: React.FC = () => {
                         metronomes are too simple. They don't prepare you for audience
                         members who don't have a musical bone in their body. It's sad,
                         but you need to prepare for this.`}
-                        img="Untitled.svg"
+                        img="file.png"
                         imgLocation="bottom"
                     />
                 </Col>
