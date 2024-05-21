@@ -4,8 +4,8 @@ import styles from '@/styles/Home.module.css';
 
 type HerobannerProps = {
     title: string;
-    subtitle: string;
-    buttonText: string;
+    subtitle?: string;
+    buttonText?: string;
     buttonVariant?: string;
 };
 
@@ -15,8 +15,8 @@ const Herobanner: React.FC<HerobannerProps> = ({ title, subtitle, buttonText, bu
             <Row>
                 <Col>
                     <h1>{title}</h1>
-                    <p>{subtitle}</p>
-                    <Button variant={buttonVariant}>{buttonText}</Button>
+                    {subtitle && <p>{subtitle}</p>}
+                    {buttonText && <Button variant={buttonVariant}>{buttonText}</Button>}
                 </Col>
             </Row>
         </Container>
