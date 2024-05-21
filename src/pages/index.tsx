@@ -7,7 +7,11 @@ export default function Index() {
     return (
         <div>
             <PageHead pageTitle="Home" />
-            <Herobanner />
+            <Herobanner
+                title="Stay in Sync, Every Beat Matters"
+                subtitle="Combat misleading audience claps with precision."
+                buttonText="Get Started"
+            />
             <main className={styles.main}>
                 <Landing />
             </main>
