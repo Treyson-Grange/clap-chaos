@@ -1,15 +1,13 @@
-import Head from 'next/head';
-import siteConfig from '@/config/clap-chaos';
+import styles from '@/styles/Home.module.css';
+import AboutInfo from '@/components/About';
+import PageHead from '@/components/PageHead';
+
 export default function About() {
     return (
         <div>
-            <Head>
-                <title>About Us | {siteConfig.SITENAME}</title>
-                <meta name="description" content={siteConfig.SITEDESCRIPTION} />
-            </Head>
-            <main>
-                <h1>About Us</h1>
-                <p>This is the about page.</p>
+            <PageHead pageTitle="About" />
+            <main className={styles.main}>
+                <AboutInfo />
             </main>
         </div>
     );

@@ -3,8 +3,9 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    padding: 6rem;
+    padding: 1rem;
     min-height: 100vh;
+    margin-top: 1rem;
 }
 
 .nav {
@@ -27,8 +28,6 @@
     height: fit-content;
     text-align: center;
 }
-
-
 
 .description {
     display: inherit;
@@ -131,6 +130,11 @@
 
 .logo {
     position: relative;
+}
+
+.herobanner {
+    background-color: var(--heroColor);
+    color: var(--text-color);
 }
 
 /* Enable hover only on non-touch devices */

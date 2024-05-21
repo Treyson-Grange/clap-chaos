@@ -1,16 +1,13 @@
-import Head from 'next/head';
-import siteConfig from '@/config/clap-chaos';
+import styles from '@/styles/Home.module.css';
+import ContactInfo from '@/components/Contact';
+import PageHead from '@/components/PageHead';
 
 export default function Contact() {
     return (
         <div>
-            <Head>
-                <title>Contact Us | {siteConfig.SITENAME}</title>
-                <meta name="description" content={siteConfig.SITEDESCRIPTION} />
-            </Head>
-            <main>
-                <h1>Contact Us</h1>
-                <p>This is the contact page.</p>
+            <PageHead pageTitle="Contact" />
+            <main className={styles.main}>
+                <ContactInfo />
             </main>
         </div>
     );

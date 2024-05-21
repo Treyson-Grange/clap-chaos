@@ -4,21 +4,19 @@ import Link from 'next/link';
 import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import Footer from '@/components/Footer';
+
+
 const inter = Inter({ subsets: ['latin'] });
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
-
     useEffect(() => {
         const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
         setIsDarkMode(darkQuery.matches);
-
         const handleDarkModeChange = (event: MediaQueryListEvent) => {
             setIsDarkMode(event.matches);
         };
-
         darkQuery.addListener(handleDarkModeChange);
-
         return () => {
             darkQuery.removeListener(handleDarkModeChange);
         };
@@ -37,9 +35,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <Link href="/about">About</Link>
                 <Link href="/contact">Contact</Link>
             </nav>
-            <main className={styles.main}>
-                {children}
-            </main>
+            {children}
             <Footer />
         </div>
     );
