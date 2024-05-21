@@ -1,5 +1,5 @@
 import React from "react";
-import { Col, Row, Container, Button } from 'react-bootstrap';
+import { Col, Row, Container } from 'react-bootstrap';
 import CardComp from '@/components/Card';
 
 const AboutInfo: React.FC = () => {
