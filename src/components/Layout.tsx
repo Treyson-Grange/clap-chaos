@@ -13,14 +13,18 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     useEffect(() => {
         const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
         setIsDarkMode(darkQuery.matches);
+
         const handleDarkModeChange = (event: MediaQueryListEvent) => {
             setIsDarkMode(event.matches);
         };
-        darkQuery.addListener(handleDarkModeChange);
+
+        darkQuery.addEventListener('change', handleDarkModeChange);
+
         return () => {
-            darkQuery.removeListener(handleDarkModeChange);
+            darkQuery.removeEventListener('change', handleDarkModeChange);
         };
     }, []);
+
 
     return (
         <div data-bs-theme={isDarkMode ? "dark" : "light"}>
@@ -28,7 +32,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            {/* Should bring this navbar to bootstrap probably */}
             <nav className={styles.nav}>
                 <Link href="/">&#128079;</Link>
                 <Link href="/metronome">Metronome</Link>
