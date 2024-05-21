@@ -8,12 +8,11 @@ class SiteConfig {
     constructor() {
         this.SITENAME = 'Clap Chaos';
         this.SITEDESCRIPTION = '';
-        this.GITHUBURL = '';
-        this.CONTACTEMAIL = '';
+        this.GITHUBURL = 'https://github.com/Treyson-Grange/clap-chaos';
+        this.CONTACTEMAIL = 'clap@chaos.com';
         this.CONTACTADDRESS = '';
         this.ANALYTICS_ID = '';
     }
-
 }
 let siteConfig = new SiteConfig();
 export default siteConfig;

@@ -1,3 +1,6 @@
+/* DARK MODE for non bootstrap components, are done here and in Home.module.css */
+/* DARK MODE for bootstrap is inherited from data-bs-theme in layout */
+
 :root {
     --max-width: 1100px;
     --border-radius: 12px;

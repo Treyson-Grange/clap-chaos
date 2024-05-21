@@ -1,4 +1,4 @@
-# Clap Chaos
+# Clap Chaos 👏
 
 Clap Chaos is a React based web app to help musicians combat misleading claps from the audience
 
