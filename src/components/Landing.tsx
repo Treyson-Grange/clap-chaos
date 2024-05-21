@@ -9,4 +9,5 @@ const Landing: React.FC = () => {
         </Container>
     );
 }
+
 export default Landing;
