@@ -9,7 +9,7 @@ export default function Contact() {
             <PageHead pageTitle="Contact" />
             <Herobanner
                 title="Contact Us"
-                subtitle="This is the Contact page."
+                subtitle="We'd love to hear from you!"
             />
             <main className={styles.main}>
                 <ContactInfo />

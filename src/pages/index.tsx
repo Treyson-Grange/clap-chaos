@@ -11,6 +11,7 @@ export default function Index() {
                 title="Stay in Sync, Every Beat Matters"
                 subtitle="Combat misleading audience claps with precision."
                 buttonText="Get Started"
+                buttonLink="/metronome"
             />
             <main className={styles.main}>
                 <Landing />

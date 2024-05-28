@@ -22,11 +22,11 @@ const ContactInfo: React.FC = () => {
                         subtitle="Let us know!"
                         text={`If you have a feature request or found a bug, please submit an issue on our GitHub page.`}
                         buttonText='GitHub'
-                        url='https://github.com/Treyson-Grange/clap-chaos'
+                        url={`${siteConfig.GITHUBURL}/issues`}
                     />
                 </Col>
             </Row>
-            <Row className='py-3'>
+            <Row className='py-2'>
                 <Col>
                     <CardComp
                         title="Open Source Software"

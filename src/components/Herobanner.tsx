@@ -7,16 +7,17 @@ type HerobannerProps = {
     subtitle?: string;
     buttonText?: string;
     buttonVariant?: string;
+    buttonLink?: string;
 };
 
-const Herobanner: React.FC<HerobannerProps> = ({ title, subtitle, buttonText, buttonVariant = "primary" }) => {
+const Herobanner: React.FC<HerobannerProps> = ({ title, subtitle, buttonText, buttonVariant = "primary", buttonLink = "#" }) => {
     return (
         <Container fluid className={`text-center py-5 ${styles.herobanner}`}>
             <Row>
                 <Col>
                     <h1>{title}</h1>
                     {subtitle && <p>{subtitle}</p>}
-                    {buttonText && <Button variant={buttonVariant}>{buttonText}</Button>}
+                    {buttonText && <Button href={buttonLink} variant={buttonVariant}>{buttonText}</Button>}
                 </Col>
             </Row>
         </Container>
