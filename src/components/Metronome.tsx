@@ -68,8 +68,7 @@ const Metronome: React.FC = () => {
             <Card>
                 <Card.Body>
                     <Stack justifyContent="center" spacing={2} direction="row" alignItems="center">
-                        <h1 className="bpm">{bpm}</h1>
-                        <p className="code">bpm</p>
+                        <h1 style={{ width: '160px', textAlign: 'center' }}>{bpm} bpm</h1>
                         <ContinuousSlider value={bpm} onChange={setBpm} />
                         <PlayButton playing={playing} onClick={togglePlay} />
                     </Stack>
