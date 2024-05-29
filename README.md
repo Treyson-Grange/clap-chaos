@@ -26,6 +26,18 @@ npm run dev
 
 Simply head to [localhost:3000](http://localhost:3000/) for further instruction (you'll figure it out)
 
+## Roadmap
+- [ ] Clap Mechanism
+    - [ ] 3 basic Styles
+    - [ ] Custom Styles
+    - [ ] Cheering Sounds
+- [ ] Visual Cues of beat and clapping
+- [ ] Base Metronome Improvements
+    - [ ] Time Signature (accent beat on 1)
+    - [ ] Tap In Tempo
+    - [ ] Different Sound Options
+    - [ ] Volume
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
