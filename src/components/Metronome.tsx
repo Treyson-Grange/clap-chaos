@@ -19,12 +19,13 @@ const Metronome: React.FC = () => {
     let engine: NodeJS.Timeout;
     let lastNote = 0;
     let nextNote = 0;
+    let osc: OscillatorNode;
 
     useEffect(() => {
         ac = new AudioContext();
 
         const sound = (ac: AudioContext, time: number) => {
-            let osc = ac.createOscillator()
+            osc = ac.createOscillator()
             osc.connect(ac.destination)
             osc.start(time)
             osc.stop(time + 1 / 16)
@@ -49,19 +50,8 @@ const Metronome: React.FC = () => {
             lastNote = 0;
             nextNote = 0;
         }
-
         return () => clearInterval(engine);
     }, [playing, bpm]);
-
-    const togglePlay = () => {
-        setPlaying(!playing);
-    };
-    const toggleClap = () => {
-        setClapping(!clapping);
-    };
-    const changeClapStyle = (clapStyle: string) => {
-        setClapStyle(clapStyle);
-    }
 
     return (
         <Container>
@@ -70,12 +60,12 @@ const Metronome: React.FC = () => {
                     <Stack justifyContent="center" spacing={2} direction="row" alignItems="center">
                         <h1 style={{ width: '160px', textAlign: 'center' }}>{bpm} bpm</h1>
                         <ContinuousSlider value={bpm} onChange={setBpm} />
-                        <PlayButton playing={playing} onClick={togglePlay} />
+                        <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
                     </Stack>
                     <Stack justifyContent="center" spacing={2} direction="row" alignItems="center">
-                        <Switch checked={clapping} onChange={toggleClap} />
+                        <Switch checked={clapping} onChange={() => setClapping(!clapping)} />
                         <h1>{clapping ? "👏" : "🔇"}</h1>
-                        <ClapStyle clapStyle={clapStyle} onChange={changeClapStyle} disabled={!clapping} />
+                        <ClapStyle clapStyle={clapStyle} onChange={(clapStyle: string) => setClapStyle(clapStyle)} disabled={!clapping} />
                     </Stack>
                 </Card.Body>
             </Card>
