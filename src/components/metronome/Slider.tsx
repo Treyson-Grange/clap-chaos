@@ -17,7 +17,11 @@ const ContinuousSlider: React.FC<ContinuousSliderProps> = ({ value, onChange }) 
             <Slider
                 value={value}
                 onChange={handleChange}
-                aria-label="Volume"
+                aria-label="BPM Selector"
+                aria-valuemin={40}
+                aria-valuemax={218}
+                aria-valuenow={value}
+                aria-valuetext={`${value} BPM`}
                 max={218}
                 min={40}
             />

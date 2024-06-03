@@ -14,8 +14,9 @@ const ClapStyle: React.FC<ClapStyleProps> = ({ onChange, clapStyle, disabled }) 
 
     return (
         <FormControl style={{ minWidth: 120 }} disabled={disabled}>
-            <InputLabel>Clap Style</InputLabel>
+            <InputLabel id="clap-style-label">Clap Style</InputLabel>
             <Select
+                labelId="clap-style-label"
                 value={clapStyle}
                 onChange={handleChange}
                 label="Clap Style"

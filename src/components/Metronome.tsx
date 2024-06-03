@@ -63,13 +63,13 @@ const Metronome: React.FC = () => {
                         <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
                     </Stack>
                     <Stack justifyContent="center" spacing={2} direction="row" alignItems="center">
-                        <Switch checked={clapping} onChange={() => setClapping(!clapping)} />
+                        <Switch checked={clapping} onChange={() => setClapping(!clapping)} aria-label="Clapping Switch" aria-labelledby="{clapping}" />
                         <h1>{clapping ? "👏" : "🔇"}</h1>
                         <ClapStyle clapStyle={clapStyle} onChange={(clapStyle: string) => setClapStyle(clapStyle)} disabled={!clapping} />
                     </Stack>
                 </Card.Body>
             </Card>
-            <h1>{clapStyle}</h1>
+            {/* <h1>{clapStyle}</h1> */}
         </Container>
     );
 }
