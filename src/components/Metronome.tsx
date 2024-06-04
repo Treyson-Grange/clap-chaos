@@ -34,7 +34,7 @@ const Metronome: React.FC = () => {
         const sound = (ac: AudioContext, time: number) => {
             osc = ac.createOscillator()
             osc.connect(ac.destination)
-            if (beat % timeSigDen === 0) {
+            if (beat % timeSigNum === 0) {
                 osc.frequency.value = 880
                 beat = 1
             }
