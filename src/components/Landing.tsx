@@ -7,29 +7,22 @@ const Landing: React.FC = () => {
         <Container>
             <h1>Clap Chaos</h1>
             <Row className="mb-3">
-                <Col lg={6} className="d-flex mb-3">
-                    <Card>
-                        <Card.Body>
-                            <Card.Title>Card Title</Card.Title>
-                            <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
-                            <Card.Text>
-                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                            </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
-                        </Card.Body>
-                    </Card>
-                </Col>
-                <Col lg={6} className="d-flex mb-3" >
+                <Col className="d-flex mb-3" >
                     <Card>
                         <Card.Body>
                             <Card.Title>Don't take our word for it</Card.Title>
                             <Card.Subtitle className="mb-2 text-muted">John Doe</Card.Subtitle>
                             <Card.Text>
-                                <Rating value={0} readOnly></Rating>
+                                <Rating value={0} readOnly />
                                 <br />
                                 This is the worst app ever! It stole all of my data, and installed ransomware on my device!!
                             </Card.Text>
-                            <Button variant="primary">Go somewhere</Button>
+                            <Card.Subtitle className="mb-2 text-muted">Jane Doe</Card.Subtitle>
+                            <Card.Text>
+                                <Rating value={5} readOnly />
+                                <br />
+                                This is the best app ever! It saved my life, and installed a new kitchen sink in my house!! It even gave me some free data from a guy named John Doe!!
+                            </Card.Text>
                         </Card.Body>
                     </Card>
                 </Col>

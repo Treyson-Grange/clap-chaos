@@ -5,15 +5,21 @@ import PlayButton from "./metronome/PlayButton";
 import { Stack, Switch } from "@mui/material";
 import Card from 'react-bootstrap/Card';
 import ClapStyle from "./metronome/ClapStyle";
+import TimeSignature from "./metronome/TimeSignature";
 
 const Metronome: React.FC = () => {
     const [bpm, setBpm] = useState<number>(100);
     const [playing, setPlaying] = useState<boolean>(false);
     const [clapping, setClapping] = useState<boolean>(true);
     const [clapStyle, setClapStyle] = useState<string>("Slight");
+    const [timeSigNum, setTimeSigNum] = useState<number>(4);
+    const [timeSigDen, setTimeSigDen] = useState<number>(4);
 
     const oneBeatDurationInMs = (bpm: number) => 60000 / bpm;
     const oneBeatInSeconds = oneBeatDurationInMs(bpm) / 1000;
+
+    const numeratorValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+    const denominatorValues = [1, 2, 4, 8];
 
     let ac: AudioContext;
     let engine: NodeJS.Timeout;
@@ -62,14 +68,20 @@ const Metronome: React.FC = () => {
                         <ContinuousSlider value={bpm} onChange={setBpm} />
                         <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
                     </Stack>
+                    <br />
                     <Stack justifyContent="center" spacing={2} direction="row" alignItems="center">
                         <Switch checked={clapping} onChange={() => setClapping(!clapping)} aria-label="Clapping Switch" aria-labelledby="{clapping}" />
                         <h1>{clapping ? "👏" : "🔇"}</h1>
                         <ClapStyle clapStyle={clapStyle} onChange={(clapStyle: string) => setClapStyle(clapStyle)} disabled={!clapping} />
                     </Stack>
+                    <br />
+                    <Stack justifyContent="center" spacing={2} direction="row" alignItems="center">
+                        <TimeSignature timeSig={timeSigNum} numbers={numeratorValues} onChange={(timeSig: number) => setTimeSigNum(timeSig)} />
+                        <TimeSignature timeSig={timeSigDen} numbers={denominatorValues} onChange={(timeSig: number) => setTimeSigDen(timeSig)} />
+                        <h1>{timeSigNum} / {timeSigDen}</h1>
+                    </Stack>
                 </Card.Body>
             </Card>
-            {/* <h1>{clapStyle}</h1> */}
         </Container>
     );
 }
