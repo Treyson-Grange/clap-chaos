@@ -23,6 +23,7 @@ const Metronome: React.FC = () => {
 
     let ac: AudioContext;
     let engine: NodeJS.Timeout;
+    let beat = 1;
     let lastNote = 0;
     let nextNote = 0;
     let osc: OscillatorNode;
@@ -33,8 +34,17 @@ const Metronome: React.FC = () => {
         const sound = (ac: AudioContext, time: number) => {
             osc = ac.createOscillator()
             osc.connect(ac.destination)
+            if (beat % timeSigDen === 0) {
+                osc.frequency.value = 880
+                beat = 1
+            }
+            else {
+                osc.frequency.value = 440
+                beat++
+            }
             osc.start(time)
             osc.stop(time + 1 / 16)
+
         };
 
         const timer = () => {
