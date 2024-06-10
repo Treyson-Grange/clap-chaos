@@ -15,6 +15,7 @@ const Metronome: React.FC = () => {
     const [timeSigNum, setTimeSigNum] = useState<number>(4);
     const [timeSigDen, setTimeSigDen] = useState<number>(4);
     const offBeatClapDelay = 0.9;
+    let playClap = true;
     const oneBeatDurationInMs = (bpm: number, den: number) => (60000 / bpm) * (4 / den);
     const oneBeatInSeconds = oneBeatDurationInMs(bpm, timeSigDen) / 1000;
 
@@ -47,13 +48,10 @@ const Metronome: React.FC = () => {
 
         };
 
-        const clap = (ac: AudioContext, time: number) => {
+        const clap = () => {
             const clapSound = new Audio("/clap-1.mp3");
-            const clapSource = ac.createMediaElementSource(clapSound);
-            clapSource.connect(ac.destination);
-            clapSound.currentTime = offBeatClapDelay;
-            clapSound.playbackRate = 1;
             clapSound.play();
+            playClap = false;
         }
 
         const timer = () => {
@@ -62,7 +60,10 @@ const Metronome: React.FC = () => {
                 nextNote = lastNote + oneBeatInSeconds;
                 lastNote = nextNote;
                 sound(ac, nextNote);
-                clap(ac, nextNote + offBeatClapDelay);
+                playClap = true;
+            }
+            if (clapping && playClap && diff >= oneBeatInSeconds / 2 - offBeatClapDelay) {
+                clap();
             }
         };
 
