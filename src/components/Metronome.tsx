@@ -6,6 +6,7 @@ import { Stack, Switch } from "@mui/material";
 import Card from 'react-bootstrap/Card';
 import ClapStyle from "./metronome/ClapStyle";
 import TimeSignature from "./metronome/TimeSignature";
+import { off } from "process";
 
 const Metronome: React.FC = () => {
     const [bpm, setBpm] = useState<number>(100);
@@ -14,7 +15,7 @@ const Metronome: React.FC = () => {
     const [clapStyle, setClapStyle] = useState<string>("Slight");
     const [timeSigNum, setTimeSigNum] = useState<number>(4);
     const [timeSigDen, setTimeSigDen] = useState<number>(4);
-
+    const offBeatClapDelay = 0.9;
     const oneBeatDurationInMs = (bpm: number) => 60000 / bpm;
     const oneBeatInSeconds = oneBeatDurationInMs(bpm) / 1000;
 
@@ -47,12 +48,22 @@ const Metronome: React.FC = () => {
 
         };
 
+        const clap = (ac: AudioContext, time: number) => {
+            const clapSound = new Audio("/clap-1.mp3");
+            const clapSource = ac.createMediaElementSource(clapSound);
+            clapSource.connect(ac.destination);
+            clapSound.currentTime = offBeatClapDelay;
+            clapSound.playbackRate = 1;
+            clapSound.play();
+        }
+
         const timer = () => {
             const diff = ac.currentTime - lastNote;
             if (diff >= oneBeatInSeconds / 2) {
                 nextNote = lastNote + oneBeatInSeconds;
                 lastNote = nextNote;
                 sound(ac, nextNote);
+                clap(ac, nextNote + offBeatClapDelay);
             }
         };
 
@@ -65,9 +76,10 @@ const Metronome: React.FC = () => {
             clearInterval(engine);
             lastNote = 0;
             nextNote = 0;
+            beat = 1;
         }
         return () => clearInterval(engine);
-    }, [playing, bpm]);
+    }, [playing, bpm, timeSigNum, timeSigDen, offBeatClapDelay]);
 
     return (
         <Container>
