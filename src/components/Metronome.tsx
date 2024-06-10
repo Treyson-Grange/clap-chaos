@@ -14,7 +14,7 @@ const Metronome: React.FC = () => {
     const [clapStyle, setClapStyle] = useState<string>("Slight");
     const [timeSigNum, setTimeSigNum] = useState<number>(4);
     const [timeSigDen, setTimeSigDen] = useState<number>(4);
-    const offBeatClapDelay = 0.9;
+    const offBeatClapDelay = .01;
     let playClap = true;
     const oneBeatDurationInMs = (bpm: number, den: number) => (60000 / bpm) * (4 / den);
     const oneBeatInSeconds = oneBeatDurationInMs(bpm, timeSigDen) / 1000;
@@ -62,7 +62,7 @@ const Metronome: React.FC = () => {
                 sound(ac, nextNote);
                 playClap = true;
             }
-            if (clapping && playClap && diff >= oneBeatInSeconds / 2 - offBeatClapDelay) {
+            if (clapping && playClap && diff >= oneBeatInSeconds / 4 - offBeatClapDelay) {
                 clap();
             }
         };
