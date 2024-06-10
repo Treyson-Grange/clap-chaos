@@ -33,7 +33,8 @@ Simply head to [localhost:3000](http://localhost:3000/) for further instruction 
     - [ ] Cheering Sounds
 - [ ] Visual Cues of beat and clapping
 - [ ] Base Metronome Improvements
-    - [ ] Time Signature (accent beat on 1)
+    - [x] Time Signature (accent beat on 1)
+    - [x] Time Signature denominator actually changes tempo
     - [ ] Tap In Tempo
     - [ ] Different Sound Options
     - [ ] Volume

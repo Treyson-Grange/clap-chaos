@@ -6,7 +6,6 @@ import { Stack, Switch } from "@mui/material";
 import Card from 'react-bootstrap/Card';
 import ClapStyle from "./metronome/ClapStyle";
 import TimeSignature from "./metronome/TimeSignature";
-import { off } from "process";
 
 const Metronome: React.FC = () => {
     const [bpm, setBpm] = useState<number>(100);
@@ -16,8 +15,8 @@ const Metronome: React.FC = () => {
     const [timeSigNum, setTimeSigNum] = useState<number>(4);
     const [timeSigDen, setTimeSigDen] = useState<number>(4);
     const offBeatClapDelay = 0.9;
-    const oneBeatDurationInMs = (bpm: number) => 60000 / bpm;
-    const oneBeatInSeconds = oneBeatDurationInMs(bpm) / 1000;
+    const oneBeatDurationInMs = (bpm: number, den: number) => (60000 / bpm) * (4 / den);
+    const oneBeatInSeconds = oneBeatDurationInMs(bpm, timeSigDen) / 1000;
 
     const numeratorValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
     const denominatorValues = [1, 2, 4, 8];
