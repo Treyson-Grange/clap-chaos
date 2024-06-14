@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Container } from 'react-bootstrap';
-import ContinuousSlider from "./metronome/Slider";
-import PlayButton from "./metronome/PlayButton";
 import { Stack, Switch } from "@mui/material";
 import Card from 'react-bootstrap/Card';
-import ClapStyle from "./metronome/ClapStyle";
-import TimeSignature from "./metronome/TimeSignature";
+import { ContinuousSlider, PlayButton, ClapStyle, TimeSignature, TapIn } from "./metronome";
+
 
 const Metronome: React.FC = () => {
     const [bpm, setBpm] = useState<number>(100);
@@ -60,7 +58,7 @@ const Metronome: React.FC = () => {
                 nextNote = lastNote + oneBeatInSeconds;
                 lastNote = nextNote;
                 sound(ac, nextNote);
-                playClap = true;
+                playClap = true;//Generally when its 8notes, they dont clap every beat. 
             }
             if (clapping && playClap && diff >= oneBeatInSeconds / 4 - offBeatClapDelay) {
                 clap();
@@ -89,6 +87,7 @@ const Metronome: React.FC = () => {
                         <h1 style={{ width: '160px', textAlign: 'center' }}>{bpm} bpm</h1>
                         <ContinuousSlider value={bpm} onChange={setBpm} />
                         <PlayButton playing={playing} onClick={() => setPlaying(!playing)} />
+                        <TapIn setBpm={setBpm} />
                     </Stack>
                     <br />
                     <Stack justifyContent="center" spacing={2} direction="row" alignItems="center">
