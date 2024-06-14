@@ -35,7 +35,7 @@ Simply head to [localhost:3000](http://localhost:3000/) for further instruction 
 - [ ] Base Metronome Improvements
     - [x] Time Signature (accent beat on 1)
     - [x] Time Signature denominator actually changes tempo
-    - [ ] Tap In Tempo
+    - [x] Tap In Tempo
     - [ ] Different Sound Options
     - [ ] Volume
 

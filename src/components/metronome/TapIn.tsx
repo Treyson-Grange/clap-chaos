@@ -31,7 +31,7 @@ const TapIn: React.FC<TapInProps> = ({ setBpm }) => {
     return (
         <>
             <h2>Tap In!</h2>
-            <h1 onClick={handleTap}>🙏</h1>
+            <h1 onClick={handleTap} style={{ cursor: 'pointer' }}>🙏</h1>
         </>
     );
 };
