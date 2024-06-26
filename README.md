@@ -38,6 +38,9 @@ Simply head to [localhost:3000](http://localhost:3000/) for further instruction 
     - [x] Tap In Tempo
     - [ ] Different Sound Options
     - [ ] Volume
+- [ ] UX/UI
+    - [ ] Get off bootstrap ¯\_(ツ)_/¯ MUI Only for simplicity
+    - [ ] Finalize theming (Color Palette, general format, etc)
 
 ## Contributing
 
