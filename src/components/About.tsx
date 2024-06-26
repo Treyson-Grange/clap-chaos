@@ -3,6 +3,23 @@ import { Col, Row, Container } from 'react-bootstrap';
 import CardComp from '@/components/Card';
 
 const AboutInfo: React.FC = () => {
+    const sessionData = {
+        user: 'John Doe',
+    };
+    fetch('http://localhost:3001/api/hello', {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
     return (
         <Container>
             <Row>
@@ -48,6 +65,7 @@ const AboutInfo: React.FC = () => {
                         imgLocation="bottom"
                     />
                 </Col>
+
             </Row>
         </Container >
     )

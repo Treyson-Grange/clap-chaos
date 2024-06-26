@@ -42,6 +42,13 @@ Simply head to [localhost:3000](http://localhost:3000/) for further instruction 
     - [ ] Get off bootstrap ¯\_(ツ)_/¯ MUI Only for simplicity
     - [ ] Finalize theming (Color Palette, general format, etc)
 
+
+## Ideas
+- [ ] API?
+- [ ] Login system to track ____
+- [ ] DB? Postgres with Prisma?
+- [ ] Is this worth turning into a full stack app?
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
