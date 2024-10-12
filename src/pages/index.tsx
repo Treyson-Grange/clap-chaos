@@ -16,6 +16,6 @@ export default function Index() {
             <main className={styles.main}>
                 <Landing />
             </main>
-        </div >
+        </div>
     );
 }

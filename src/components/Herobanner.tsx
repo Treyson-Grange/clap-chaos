@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { Row, Container, Col, Button } from 'react-bootstrap';
 import styles from '@/styles/Home.module.css';
 
@@ -10,18 +10,28 @@ type HerobannerProps = {
     buttonLink?: string;
 };
 
-const Herobanner: React.FC<HerobannerProps> = ({ title, subtitle, buttonText, buttonVariant = "primary", buttonLink = "#" }) => {
+const Herobanner: React.FC<HerobannerProps> = ({
+    title,
+    subtitle,
+    buttonText,
+    buttonVariant = 'primary',
+    buttonLink = '#',
+}) => {
     return (
         <Container fluid className={`text-center py-5 ${styles.herobanner}`}>
             <Row>
                 <Col>
                     <h1>{title}</h1>
                     {subtitle && <p>{subtitle}</p>}
-                    {buttonText && <Button href={buttonLink} variant={buttonVariant}>{buttonText}</Button>}
+                    {buttonText && (
+                        <Button href={buttonLink} variant={buttonVariant}>
+                            {buttonText}
+                        </Button>
+                    )}
                 </Col>
             </Row>
         </Container>
     );
-}
+};
 
 export default Herobanner;

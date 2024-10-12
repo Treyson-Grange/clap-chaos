@@ -1,11 +1,11 @@
 # Clap Chaos 👏
 
 ```
- ██████ ██       █████  ██████         ██████ ██   ██  █████   ██████  ███████ 
-██      ██      ██   ██ ██   ██       ██      ██   ██ ██   ██ ██    ██ ██      
-██      ██      ███████ ██████  █████ ██      ███████ ███████ ██    ██ ███████ 
-██      ██      ██   ██ ██            ██      ██   ██ ██   ██ ██    ██      ██ 
- ██████ ███████ ██   ██ ██             ██████ ██   ██ ██   ██  ██████  ███████ 
+ ██████ ██       █████  ██████         ██████ ██   ██  █████   ██████  ███████
+██      ██      ██   ██ ██   ██       ██      ██   ██ ██   ██ ██    ██ ██
+██      ██      ███████ ██████  █████ ██      ███████ ███████ ██    ██ ███████
+██      ██      ██   ██ ██            ██      ██   ██ ██   ██ ██    ██      ██
+ ██████ ███████ ██   ██ ██             ██████ ██   ██ ██   ██  ██████  ███████
 ```
 
 Clap Chaos is a React based web app to help musicians combat misleading claps from the audience
@@ -15,6 +15,7 @@ Clap Chaos is a React based web app to help musicians combat misleading claps fr
 As Clap Chaos is still in early development, there is no public site hosting it.
 
 To run locally:
+
 ```
 git clone git@github.com:Treyson-Grange/clap-chaos.git
 cd clap-chaos
@@ -27,27 +28,28 @@ npm run dev
 Simply head to [localhost:3000](http://localhost:3000/) for further instruction (you'll figure it out)
 
 ## Roadmap
-- [ ] Clap Mechanism
-    - [ ] 3 basic Styles
-    - [ ] Custom Styles
-    - [ ] Cheering Sounds
-- [ ] Visual Cues of beat and clapping
-- [ ] Base Metronome Improvements
-    - [x] Time Signature (accent beat on 1)
-    - [x] Time Signature denominator actually changes tempo
-    - [x] Tap In Tempo
-    - [ ] Different Sound Options
-    - [ ] Volume
-- [ ] UX/UI
-    - [ ] Get off bootstrap ¯\_(ツ)_/¯ MUI Only for simplicity
-    - [ ] Finalize theming (Color Palette, general format, etc)
 
+-   [ ] Clap Mechanism
+    -   [ ] 3 basic Styles
+    -   [ ] Custom Styles
+    -   [ ] Cheering Sounds
+-   [ ] Visual Cues of beat and clapping
+-   [ ] Base Metronome Improvements
+    -   [x] Time Signature (accent beat on 1)
+    -   [x] Time Signature denominator actually changes tempo
+    -   [x] Tap In Tempo
+    -   [ ] Different Sound Options
+    -   [ ] Volume
+-   [ ] UX/UI
+    -   [ ] Get off bootstrap ¯\_(ツ)\_/¯ MUI Only for simplicity
+    -   [ ] Finalize theming (Color Palette, general format, etc)
 
 ## Ideas
-- [ ] API?
-- [ ] Login system to track ____
-- [ ] DB? Postgres with Prisma?
-- [ ] Is this worth turning into a full stack app?
+
+-   [ ] API?
+-   [ ] Login system to track \_\_\_\_
+-   [ ] DB? Postgres with Prisma?
+-   [ ] Is this worth turning into a full stack app?
 
 ## Contributing
 

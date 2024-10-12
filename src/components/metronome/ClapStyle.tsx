@@ -1,5 +1,11 @@
 import React from 'react';
-import { MenuItem, FormControl, Select, InputLabel, SelectChangeEvent } from '@mui/material';
+import {
+    MenuItem,
+    FormControl,
+    Select,
+    InputLabel,
+    SelectChangeEvent,
+} from '@mui/material';
 
 interface ClapStyleProps {
     onChange: (clapStyle: string) => void;
@@ -7,7 +13,11 @@ interface ClapStyleProps {
     disabled?: boolean;
 }
 
-const ClapStyle: React.FC<ClapStyleProps> = ({ onChange, clapStyle, disabled }) => {
+const ClapStyle: React.FC<ClapStyleProps> = ({
+    onChange,
+    clapStyle,
+    disabled,
+}) => {
     const handleChange = (event: SelectChangeEvent<string>) => {
         onChange(event.target.value as string);
     };

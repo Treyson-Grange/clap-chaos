@@ -14,14 +14,14 @@ const PlayButton: React.FC<PlayButtonProps> = ({ onClick, playing }) => {
         <Box>
             <Fab
                 color="primary"
-                aria-label={playing ? "Pause" : "Play"}
-                aria-pressed={playing ? "true" : "false"}
+                aria-label={playing ? 'Pause' : 'Play'}
+                aria-pressed={playing ? 'true' : 'false'}
                 onClick={onClick}
             >
                 {playing ? <PauseIcon /> : <PlayArrowIcon />}
             </Fab>
         </Box>
     );
-}
+};
 
 export default PlayButton;

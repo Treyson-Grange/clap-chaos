@@ -1,4 +1,4 @@
-import Metronome from "@/components/Metronome";
+import Metronome from '@/components/Metronome';
 import styles from '@/styles/Home.module.css';
 import PageHead from '@/components/PageHead';
 

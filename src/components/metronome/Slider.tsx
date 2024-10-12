@@ -7,7 +7,10 @@ interface ContinuousSliderProps {
     onChange: (value: number) => void;
 }
 
-const ContinuousSlider: React.FC<ContinuousSliderProps> = ({ value, onChange }) => {
+const ContinuousSlider: React.FC<ContinuousSliderProps> = ({
+    value,
+    onChange,
+}) => {
     const handleChange = (event: Event, newValue: number | number[]) => {
         onChange(newValue as number);
     };
@@ -27,6 +30,6 @@ const ContinuousSlider: React.FC<ContinuousSliderProps> = ({ value, onChange }) 
             />
         </Box>
     );
-}
+};
 
 export default ContinuousSlider;
