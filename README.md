@@ -30,9 +30,8 @@ Simply head to [localhost:3000](http://localhost:3000/) for further instruction 
 ## Roadmap
 
 -   [ ] Clap Mechanism
-    -   [ ] 3 basic Styles
-    -   [ ] Custom Styles
-    -   [ ] Cheering Sounds
+    -   [ ] Actually random clapping (currently just syncopated clapping)
+    -   [x] Cheering Sounds
 -   [ ] Visual Cues of beat and clapping
 -   [ ] Base Metronome Improvements
     -   [x] Time Signature (accent beat on 1)
@@ -40,21 +39,7 @@ Simply head to [localhost:3000](http://localhost:3000/) for further instruction 
     -   [x] Tap In Tempo
     -   [ ] Different Sound Options
     -   [ ] Volume
--   [ ] UX/UI
-    -   [ ] Get off bootstrap ¯\_(ツ)\_/¯ MUI Only for simplicity
-    -   [ ] Finalize theming (Color Palette, general format, etc)
-
-## Ideas
-
--   [ ] API?
--   [ ] Login system to track \_\_\_\_
--   [ ] DB? Postgres with Prisma?
--   [ ] Is this worth turning into a full stack app?
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
+-   [ ] Wrap up
 
 ## License
 
